@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <style>
+    h1 {
+      text-shadow: 5px 5px 5px #000000;
+      font-family: "Georgia", Georgia, serif;
+    }
+    h2 {
+  text-shadow: 2px 2px #000000;
+  font-family: "Georgia", Georgia, serif;
+}
+p {
+  color: white;
+  text-indent: 30px;
+  text-transform: uppercase;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <h2>Use the interactive charts below to explore the dataset</h2>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <p>
+        Welcome to the Belly Button Biodiversity Dashboard! First, I would like to thank all the participants of this study for their time and their contributions to the science community. This dashboard was created so that each participant would be able to see what data we were able to gather for this study.
+      </p>
+      <p>
+        In the Test Subject ID No., use the drop box to find your number. The demographic info panel will then correlate the basic information gathered from a participate.  Below, there are three different charts each having different information on the belly button study. The bar chart shows the top ten bacteria cultures found in an individual’s belly button. The gauge chart tells us how many times the participant washed their belly button in a week. Lastly, the bubble chart shows the bacteria cultures per sample for the whole study.
+      </p>
+      <p>
+        Thanks again for your participation and hope you find all this information just as fascinating as I do!
+      </p>
+
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+        <p text-align: center;>In this bar graph, you can see the Top Ten bacteria in your belly button!</p>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+        <p>This gauge graph show how often you clean your belly button in a week.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="static/js/charts.js"></script>
+
+</body>
+
+</html>
